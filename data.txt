@@ -1,0 +1,186 @@
+//1. all the topics and tasks which are taught in the month of October
+zen_class> db.topics.find({
+... month: 'October'
+...})
+[
+{id: ObjectId("6542516e1520a023d3d71ac7"),
+
+topic: 'HTML"
+
+task: 'Create the structure of a webpage with HTML,
+
+month:' October'
+},
+
+{_id: ObjectId("6542516e1520a023d3d71ac9"),
+
+topic: JavaScript',
+
+task: 'Implement interactive features with JavaScript',
+
+month: 'October'
+},
+
+{_id: ObjectId("6542516e1520a023d3d71acb"),
+
+topic: 'HTML',
+
+task: 'Design a web form using HTML,
+
+month: 'October'
+},
+
+{_id: ObjectId("6542516e1520a023d3d71acd"),
+
+topic: Javascript',
+
+task: 'Write Javascript functions for form validation',
+
+month: 'October'
+},
+
+{_id: ObjectId("6542516e1520a023d3d71acf"),
+
+topic: 'HTML",
+
+task: Embed multimedia content using HTML tags, 
+
+month: 'October'
+},
+
+{id: ObjectId("6542516e1520a023d3d71ad0"),
+
+topic: React',
+
+task: Implement state management in a React app',
+
+month: 'October'
+}1
+]
+
+zen_class>
+
+//2.all the company drives which appeared between 15 oct-2020 and 31-oct-2020.
+zen_class> db.company_drives.find({
+
+start_date: {
+
+}
+
+$gte: ISODate("2023-10-15T00:00:00.0007'), $lte: ISODate("2023-10-31T23:59:59.9997')
+
+})
+
+{_id: ObjectId("65425bdb1520a023d3d71ad1"),
+
+drive_name: 'TechCorp Recruitment Drive',
+
+start_date: ISODate("2023-10-15T00:00:00.000Z"), 
+
+end_date: ISODate("2023-10-25T00:00:00.000Z")
+},
+
+{
+    _id: ObjectId("65425bdb1520a023d3d71ad3"),
+
+drive_name: 'CodeNinja Placement Drive',
+
+start_date: ISODate("2023-10-20T00:00:00.000Z"),
+
+end_date: ISODate("2023-10-31T00:00:00.000Z")
+},
+{
+    _id: ObjectId("65425bdb1520a023d3d71ad7"),
+
+drive_name: 'AI Innovators Recruitment Event',
+
+start_date: ISODate("2023-10-25T00:00:00.000Z"),
+
+end_date: ISODate("2023-11-05T00:00:00.000Z")
+},
+{
+    _id: ObjectId("65425bdb1520a023d3d71ad8"),
+
+drive_name: 'EcoTech GreenTech Fair'
+
+start date: ISODate("2023-10-15T00:00:00.000Z"),
+
+ end_date: ISODate("2023-10-30T00:00:00.000Z")
+
+}
+
+zen class>
+
+//3. the number of problems solved by the user in codekata
+zen_class> db.users.find()
+
+[
+
+{ _id: ObjectId("6542647a1520a023d3d71ae3"), name: 'Balaji', problems_solved: 150
+
+}, { _id: ObjectId("6542647a1520a023d3d71ae4"), name: 'Jack',
+
+problems_solved: 125
+
+},
+
+_id: ObjectId("6542647a1520a023d3d71ae5"), name: 'Will', problems_solved: 188
+
+}
+
+zen_class>
+//4.all the mentors with who has the mentee's count more than 15.
+zen_class> db.mentors.find({
+
+mentees: {
+
+$gte:15
+
+}
+
+})
+
+_id: ObjectId("6542659c1520a023d3d71ae7"),
+
+mentor: 'Mentor 2',
+
+},
+
+{
+
+mentees: 19
+
+_id: ObjectId("6542659c1520a023d3d71ae8"),
+
+mentor: 'Mentor 3',
+
+mentees: 16
+
+},
+
+{
+
+_id: ObjectId("6542659c1520a023d3d71aea"),
+
+mentor: 'Mentor 5',
+
+mentees: 20
+}
+
+zen_class>
+//5.the number of users who are absent and task is not submitted  between 15 oct-2020 and 31-oct-2020
+zen_class> db.attendance_tasks.find({
+
+date: {
+
+$gte: ISODate('2020-10-15T00:00:00.000Z"),
+
+$lte: ISODate("2020-10-31T23:59:59.9997')
+
+},
+
+attendance: 'Absent',
+
+task_submission: 'Not Submitted' }).count()
+
+zen_class>
